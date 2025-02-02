@@ -50,10 +50,10 @@ const SignUpFile = () => {
             setErrors("Error sending email verification");
             Alert.alert("Error", error.message);
           });
-          setName("");
-          setEmail("");
-          setPassword("");
-          setConfirmPassword("");
+        setName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
       })
       .catch((errors) => {
         const errorMessage = errors.message;
@@ -124,6 +124,11 @@ const SignUpFile = () => {
         className="bg-white p-2 rounded-[6px] w-full mt-[1rem] h-[3.2rem] text-[1.1rem] focus:border-2
        focus:ring-[#023047] "
       />
+      {errors && (
+        <Text className="text-red-500 text-[12px] mt-[1rem]">
+          {errors}
+        </Text>
+      )}
       {!emailSent && (
         <TouchableOpacity
           className="bg-yellow-400 px-4 py-2 mt-[1rem] rounded-[8px] w-full"
